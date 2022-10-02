@@ -1,0 +1,55 @@
+{% extends '00 - ORIGEN (b).html' %}   
+{% load static %}
+
+
+{% block blockname %}
+<body>
+    <br>
+    <p class="text-center"><img class="img-fluid rounded mb-5 mb-lg-0" src="http://127.0.0.1:8000/media/imagenes/Membrete_Coder-Pharma.png" alt="..." /></p>
+    <hr>
+    <h1 class="text-center"> AGREGAR CLIENTE </h1>
+    <br>
+    <br>
+
+
+    <form action="" method="POST"> 
+        {% csrf_token %}
+        
+        {{form.as_p}}
+       
+        <!--
+        <p> Nombre: <input type="text" name="nombre"></p>
+       <p> Apellido: <input type="text" name="apellido"></p>
+       <p> Razon Social: <input type="text" name="razonSocial"></p>
+       <p> Direccion: <input type="text" name="direccion"></p>
+       <p> Codigo Postal: <input type="text" name="codigoPostal"></p>
+       <p> Teléfono: <input type="number" name="telefono"></p>
+       <p> E-mail: <input type="text" name="eMail"></p>
+       <p> Forma de Pago: <input type="text" name="form_pago"></p>
+       <p> Codigo Cliente : <input type="number" name="codigo_Cliente"></p>
+       <p> Tipo Cliente: <input type="text" name="tipo_Cliente"></p>
+       -->
+
+    <!--
+       <form action="{% url '08_AgregaCliente' %}" method="POST"> {% csrf_token %}
+        <p> Nombre: <input type="text" name="nombre" placeholder="Nombre"></p>
+        <p> Apellido: <input type="text" name="apellido" placeholder="Apellido"></p>
+        <p> Razon Social: <input type="text" name="razonSocial" placeholder="Razon Social"></p>
+        <p> Direccion: <input type="text" name="direccion" placeholder="Direccion"></p>
+        <p> Codigo Postal: <input type="text" name="codigoPostal" placeholder="Código Postal"></p>
+        <p> Teléfono: <input type="number" name="telefono" placeholder="Teléfono"></p>
+        <p> E-mail: <input type="text" name="eMail" placeholder="E-Mail"></p>
+        <p> Forma de Pago: <input type="text" name="form_pago" placeholder="Forma de Pago"></p>
+        <p> Codigo Cliente : <input type="number" name="codigo_Cliente" placeholder="Código Cliente"></p>
+        <p> Tipo Cliente: <input type="text" name="tipo_Cliente" placeholder="Tipo Cliente"></p>-->
+
+       <input type="submit" value="Agregar">
+    </form>
+    <hr>
+    
+        <a href="{% url '08_Clientes' %}" class="btn btn-outline-primary" disabled> VOLVER - </a>
+    
+    <br>
+</body>
+</html>
+{% endblock blockname %}

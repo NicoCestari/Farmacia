@@ -1,0 +1,60 @@
+{% extends '00 - ORIGEN (b).html' %}
+{% load static %}
+
+<!-- RESULTADO DE BUSQUEDA PARA CLIENTES -->
+
+{% block blockname %}
+    <br>
+    <p class="text-center"><img class="img-fluid rounded mb-5 mb-lg-0" src="http://127.0.0.1:8000/media/imagenes/Membrete_Coder-Pharma.png" alt="..." /></p>
+    <hr>
+    <br>
+    <br>
+    <h2 class="text-center"> BUSQUEDA </h2>
+
+    <p>Resultados de la busqueda para: '{{nombre}}'</p>
+        
+        {% if cliente %}
+        <center>
+        <table class="table table-striped">
+            <tr>
+                <th class="text-center">Nombre y Apellido </th>
+                <th class="text-center">Razón Social</th>
+                <th class="text-center">Dirección</th>
+                <th class="text-center">Código Postal</th>
+                <th class="text-center">Teléfono</th>
+                <th class="text-center">E-Mail</th>
+                <th class="text-center">Forma de Pago</th>
+                <th class="text-center">Codigo Cliente</th>
+                <th class="text-center">Codigo Cliente</th>
+                <th class="text-center">Accion</th>
+            </tr>
+                {% for resultado in cliente %}
+            <tr>
+                <td>{{resultado.nombre}} {{resultado.apellido}}</td>
+                <td>{{resultado.razonSocial}}</td>
+                <td>{{resultado.direccion}}</td>
+                <td>{{resultado.codigoPostal}}</td>
+                <td>{{resultado.telefono}}</td>
+                <td>{{resultado.eMail}}</td>
+                <td>{{resultado.form_pago}}</td>
+                <td>{{resultado.codigo_Cliente}}</td>
+                <td>{{resultado.tipo_Cliente}}</td>
+                <td>
+                    <a style="color: black; text-decoration: none" href="{% url '08_EditaCliente' resultado.id %}">Editar</a> |
+                    <a style="color: black; text-decoration: none" href="{% url '08_EliminaCliente' resultado.id %}">Eliminar</a> 
+                </td>
+            </tr>
+                {% endfor %}
+            </table>
+        </center>
+
+        {% else %}
+            <p class="text-center"><b>Sin resultados</b>
+            <img src="data:image/jpeg;base64,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"/ >
+            </p>
+            {% endif %}
+    
+        <p><a href="{% url '08_Clientes' %}" class="btn btn-outline-primary" disabled> VOLVER </a></p>
+ 
+
+{% endblock blockname %}

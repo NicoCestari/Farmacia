@@ -1,0 +1,49 @@
+{% extends '00 - ORIGEN (b).html' %}   
+{% load static %}
+
+
+{% block blockname %}
+<body>
+    <br>
+    <p class="text-center"><img class="img-fluid rounded mb-5 mb-lg-0" src="http://127.0.0.1:8000/media/imagenes/Membrete_Coder-Pharma.png" alt="..." /></p>
+    <hr>
+    <h1>AGREGAR PRODUCTO</h1>
+
+    <form action="" method="POST"> 
+        {% csrf_token %}
+        
+        {{form.as_p}}
+
+        <!--
+       <p> Monodroga: <input type="text" name="monodroga"></p>
+       <p> Marca    : <input type="text" name="marca"></p>
+       <p> Presentacion: <input type="text" name="presentacion"></p>
+       <p> Forma Farmaceutica: <input type="text" name="formFarmaceutica"></p>
+       <p> Certificado ANMAT: <input type="number" name="certificado"></p>
+       <p> Código Producto: <input type="text" name="codigoProducto"></p>
+       <p> Stock: <input type="number" name="stock"></p>
+        -->
+       
+        <input type="submit" value="Agregar">
+<!--
+    <form action="{% url '02_AgregaProducto' %}" method="POST"> {% csrf_token %}
+       <p> Monodroga: <input type="text" name="monodroga" placeholder="Monodroga"></p>
+       <p> Marca    : <input type="text" name="marca" placeholder="Marca"></p>
+       <p> Presentacion: <input type="text" name="presentacion" placeholder="Presentacion"></p>
+       <p> Forma Farmaceutica: <input type="text" name="formFarmaceutica" placeholder="Forma Farmaceutica"></p>
+       <p> Certificado ANMAT: <input type="number" name="certificado" placeholder="Certificado A.N.M.A.T."></p>
+       <p> Código Producto: <input type="text" name="codigoProducto" placeholder="Código Producto"></p>
+       <p> Stock: <input type="number" name="stock" placeholder="0"></p>
+       <input type="submit" value="Agregar">
+-->
+    </form>
+
+
+    
+        <a href="{% url '02_Productos' %}" class="btn btn-outline-primary" disabled> VOLVER - </a>
+ 
+
+
+</body>
+</html>
+{% endblock blockname %}

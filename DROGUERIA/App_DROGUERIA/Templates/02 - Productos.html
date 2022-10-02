@@ -1,0 +1,67 @@
+{% extends '00 - ORIGEN (b).html' %}   
+{% load static %}
+
+
+{% block blockname %}    
+</head>
+    <body>
+        <br>
+        <p class="text-center"><img class="img-fluid rounded mb-5 mb-lg-0" src="http://127.0.0.1:8000/media/imagenes/Productos.png" alt="..." /></p>
+        <hr>
+        <br>
+        <h1 class="text-center">NUESTRO VADEMECUM</h1>
+        <br>
+        <br>
+        <br>
+        <br>
+        <p><b> Productos de Coder-Pharma : </b></p>
+
+    <center>
+        <h4 class="text-center"> Buscar producto </h4>
+        <form action="{% url '02_BuscarProducto' %}" method="GET"> {% csrf_token %}
+        <p><input type="text" name="monodroga">
+        <input type="submit" value="BUSCAR">
+        </p>
+
+        </form>
+        <table class="table table-striped" >
+            <tr>
+                <th class="text-center">Numero</th>
+                <th class="text-center">Monodroga</th>
+                <th class="text-center">Marca</th>
+                <th class="text-center">Presentacion</th>
+                <th class="text-center">Forma Farmaceutica</th>
+                <th class="text-center">Certificado ANMAT</th>
+                <th class="text-center">Código Producto</th>
+                <th class="text-center">Stock</th>
+                <th class="text-center">Accion</th>
+            </tr>
+                {% for productos in Vademecum %}
+            <tr>
+                <th scope="row">{{forloop.counter}}</th>
+                <td>{{productos.monodroga}}</td>
+                <td class="text-center">{{productos.marca}}</td>
+                <td>{{productos.presentacion}}</td>
+                <td>{{productos.formFarmaceutica}}</td>
+                <td class="text-center"><b>{{productos.certificado}}</b></td>
+                <td>{{productos.codigoProducto}}</td>
+                <td>{{productos.stock}}</td>
+                <td>
+                    <a style="color: black; text-decoration: none" href="{% url '02_EditaProducto' productos.id %}">Editar</a> |
+                    <a style="color: black; text-decoration: none" href="{% url '02_EliminaProducto' productos.id %}">Eliminar</a> 
+                </td>
+            </tr>
+                {% endfor %}
+        </table>
+    </center>
+    <br>
+    <br>
+    <p> Para agregar un nuevo producto, click  <a style="text-decoration: none;" href="{% url '02_AgregaProducto' %}" class=" btn btn-outline-primary">AQUI</a> </p>
+    <hr>
+    <h1 class="text-center"><a href="{% url '04_AcercadeCoderPharma' %}" class="btn btn-outline-primary" disabled>VOLVER</a></h1>
+    <hr><hr>
+    <br>
+    </body>
+</html>
+<br>
+{% endblock blockname %}

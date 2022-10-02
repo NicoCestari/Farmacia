@@ -1,0 +1,64 @@
+{% extends '00 - ORIGEN (b).html' %}   
+{% load static %}
+
+
+{% block blockname %}   
+</head>
+    <body>
+        <br>
+        <p class="text-center"><img class="img-fluid rounded mb-5 mb-lg-0" src="http://127.0.0.1:8000/media/imagenes/Membrete_Coder-Pharma.png" alt="..." /></p>
+        <hr>
+        <h1 class="text-center"> NUESTRO EQUIPO</h1>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <center>
+            <h4 class="text-center"> Buscar Personal </h4>
+            <form action="{% url '06_BuscarEmpleado' %}" method="GET"> {% csrf_token %}
+            <p><input type="text" name="nombre">
+            <input type="submit" value="BUSCAR">
+            </p>
+            <table class="table table-striped">
+                <tr>
+                    <th>Nombre y Apellido </th>
+                    <th>Dirección</th>
+                    <th>Código Postal</th>
+                    <th>Teléfono</th>
+                    <th>E-Mail</th>
+                    <th>Puesto</th>
+                    <th>Cargo</th>
+                    <th>Horario de Ingreso</th>
+                    <th>Horario de Salida</th>
+                    <th>Accion</th>
+                </tr>
+                    {% for empleado in Personal %}
+                <tr>
+                    <td>{{empleado.nombre}} {{empleado.apellido}}</td>
+                    <td>{{empleado.direccion}}</td>
+                    <td>{{empleado.codigoPostal}}</td>
+                    <td>{{empleado.telefono}}</td>
+                    <td>{{empleado.eMail}}</td>
+                    <td>{{empleado.puesto}}</td>
+                    <td>{{empleado.cargo}}</td>
+                    <td>{{empleado.horarioIngreso}}</td>
+                    <td>{{empleado.horarioSalida}}</td>
+                    <td>
+                        <a style="color: black; text-decoration: none" href="{% url '06_EditaEmpleado' empleado.id %}">Editar</a> |
+                        <a style="color: black; text-decoration: none" href="{% url '06_EliminaEmpleado' empleado.id %}">Eliminar</a> 
+                    </td>
+                </tr>
+                    {% endfor %}
+            </table>
+        </center>
+
+        <p> Para agregar un nuevo EMPLEADO, click  <a style="text-decoration: none;" href="{% url '06_AgregaEmpleado' %}" class="btn btn-outline-primary"> AQUI</a> </p>
+
+        <hr>
+       
+        <h1 class="text-center"><a href="{% url '04_AcercadeCoderPharma' %}" class="btn btn-outline-primary" disabled> VOLVER</a></h1>
+                
+    </body>
+</html>
+{% endblock blockname %}

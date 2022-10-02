@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% load static %}
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>ACERCA DE NOSOTROS</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body class="d-flex flex-column h-100">
+        <main class="flex-shrink-0">
+            <!-- Barra de Navegacion-->
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container px-5">
+                    <a class="navbar-brand" href="{% url '01_Inicio' %}">INICIO</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <li class="nav-item"><a class="nav-link" href="{% url '02_Productos' %}">Productos | </a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url '03_Contacto' %}">Contacto | </a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url '04_AcercadeCoderPharma' %}">Acerca de Coder-Pharma | </a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url '05_Directorio' %}">Directorio | </a></li>
+                            <li class="btn btn-primary" href="#signup">LOGIN</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- Header-->
+            <header class="py-5">
+                <div class="container px-5">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8 col-xxl-6">
+                            <div class="text-center my-5">
+                                <h1 class="fw-bolder mb-3">El objetivo de esta aplicacion es que en primera instancia el usuario tenga una experiencia comoda, practica y que pueda navegar de manera intuitiva.</h1>
+                                <p class="lead fw-normal text-muted mb-4">Para conocer un poco mas de los creadores de esta App simulando una drogueria... dejamos una breve descripción y acceso a nuestras redes sociales.</p>
+                                <a class="btn btn-primary btn-lg" href="#scroll-target">Acerca de Nosotros</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- About section one-->
+            <section class="py-5 bg-light" id="scroll-target">
+                <div class="container px-5 my-5">
+                    <div class="row gx-5 align-items-center">
+                        <div class="col-lg-6"><img class="img-fluid rounded mb-5 mb-lg-0" src="https://dummyimage.com/600x400/343a40/6c757d" alt="..." /></div>
+                        <div class="col-lg-6">
+                            <h2 class="fw-bolder">Nicolas Cestari</h2>
+                            <p class="lead fw-normal text-muted mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto est, ut esse a labore aliquam beatae expedita. Blanditiis impedit numquam libero molestiae et fugit cupiditate, quibusdam expedita, maiores eaque quisquam.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- About section two-->
+            <section class="py-5">
+                <div class="container px-5 my-5">
+                    <div class="row gx-5 align-items-center">
+                        <div class="col-lg-6 order-first order-lg-last"><img class="img-fluid rounded mb-5 mb-lg-0" src="C:\Users\PC\OneDrive\Escritorio\Coder Pharma\Coder-Pharma\DROGUERIA\App_DROGUERIA\static\LucasDiaz-Descripcion.jpeg" alt="..." /></div>
+                        <div class="col-lg-6">
+                            <h2 class="fw-bolder">Lucas Leonel Diaz</h2>
+                            <p class="lead fw-normal text-muted mb-0">20 de julio de 1992, 30 años.</p>
+                            <div class="col-lg-6 h-100 text-center text-lg-end my-auto">
+                                <ul class="list-inline mb-0">
+                                    <li class="list-inline-item me-4">
+                                        <a href="https://www.facebook.com/Diaz.lucas.leonel"><i class="bi-facebook fs-3"></i></a>
+                                    </li>
+                                    <li class="list-inline-item me-4">
+                                        <a href="https://twitter.com/iLucas_txt"><i class="bi-twitter fs-3"></i></a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="https://www.instagram.com/lucaas.jpeg/"><i class="bi-instagram fs-3"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- About section three-->
+            <section class="py-5 bg-light" id="scroll-target">
+                <div class="container px-5 my-5">
+                    <div class="row gx-5 align-items-center">
+                        <div class="col-lg-6"><img class="img-fluid rounded mb-5 mb-lg-0" src="https://dummyimage.com/600x400/343a40/6c757d" alt="..." /></div>
+                        <div class="col-lg-6">
+                            <h2 class="fw-bolder">Pablo Luis Figueroa</h2>
+                            <p class="lead fw-normal text-muted mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto est, ut esse a labore aliquam beatae expedita. Blanditiis impedit numquam libero molestiae et fugit cupiditate, quibusdam expedita, maiores eaque quisquam.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Team members section-->
+            <section class="py-5 bg-light">
+                <div class="container px-5 my-5">
+                    <div class="text-center">
+                        <h2 class="fw-bolder">Nuestro Equipo!</h2>
+                        <p class="lead fw-normal text-muted mb-5">Alumnos de Mauricio Cuello</p>
+                    </div>
+                    <div class="row gx-5 row-cols-1 row-cols-sm-2 row-cols-xl-4 justify-content-center">
+                        <div class="col mb-5 mb-5 mb-xl-0">
+                            <div class="text-center">
+                                <img class="img-fluid rounded-circle mb-4 px-4" src="C:\Users\PC\OneDrive\Escritorio\Coder Pharma\Coder-Pharma\DROGUERIA\App_DROGUERIA\static\NicolasCestari.JPG" alt="..." />
+                                <h5 class="fw-bolder">Nicolas Cestari</h5>
+                                <div class="fst-italic text-muted">Desarrollador</div>
+                            </div>
+                        </div>
+                        <div class="col mb-5 mb-5 mb-xl-0">
+                            <div class="text-center">
+                                <img class="img-fluid rounded-circle mb-4 px-4" src="C:\Users\PC\OneDrive\Escritorio\Coder Pharma\Coder-Pharma\DROGUERIA\App_DROGUERIA\static\LucasDiaz.JPG" alt="..." />
+                                <h5 class="fw-bolder">Lucas Leonel Diaz</h5>
+                                <div class="fst-italic text-muted">Desarrollador</div>
+                            </div>
+                        </div>
+                        <div class="col mb-5 mb-5 mb-sm-0">
+                            <div class="text-center">
+                                <img class="img-fluid rounded-circle mb-4 px-4" src="C:\Users\PC\OneDrive\Escritorio\Coder Pharma\Coder-Pharma\DROGUERIA\App_DROGUERIA\static\PabloFigueroa.JPG" alt="..." />
+                                <h5 class="fw-bolder">Pablo Luis Figueroa</h5>
+                                <div class="fst-italic text-muted">Desarrollador</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!-- Footer-->
+        <footer class="bg-dark py-4 mt-auto">
+            <div class="container px-5">
+                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                    <div class="col-auto"><div class="small m-0 text-white">Copyright &copy; Your Website 2022</div></div>
+                    <div class="col-auto">
+                        <a class="link-light small" href="#!">Privacy</a>
+                        <span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="#!">Terms</a>
+                        <span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="#!">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>

@@ -1,0 +1,169 @@
+
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        {% load static %}
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Coder-Pharma</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body class="d-flex flex-column h-100">
+        <main class="flex-shrink-0">
+            <!-- Barra de Navegacion-->
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container px-5">
+                    <a class="navbar-brand" href="{% url '01_Inicio' %}">INICIO</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" id="navbarDropdownBlog" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menú</a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownBlog">
+                                    <li><a class="dropdown-item" href="{% url '08_Clientes' %}">Clientes</a></li>
+                                    <li><a class="dropdown-item" href="{% url '06_Empleados' %}">Empleados</a></li>
+                                    <li><a class="dropdown-item" href="{% url '07_Proveedores' %}">Proveedores</a></li>
+                                    <li><a class="dropdown-item" href="{% url '02_Productos' %}">Productos</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="{% url '09_Contacto' %}"> | Contacto | </a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url '04_AcercadeCoderPharma' %}">Acerca de Coder-Pharma | </a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url '05_Directorio' %}">Directorio | </a></li>
+                            {% if user.is_authenticated %}
+                            <p style="color: rgb(255, 255, 255); text-decoration: none; margin-right: 10px; margin-top: 7px;">Bienvenido/a {{user.username}}  </p>
+                            <img src="{{ url }}" height="40px" alt="Avatar">
+                                <li class="btn btn-primary" disabled ><a style="color: rgb(255, 255, 255); text-decoration: none" href="{% url '11_Logout' %}">LOGOUT</a></li>
+                            {% else %}
+                                <li class="btn btn-primary" disabled ><a style="color: rgb(255, 255, 255); text-decoration: none" href="{% url '09_Login' %}">LOGIN</a></li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- Encabezado-->
+            <header class="bg-dark py-5">
+                <div class="container px-5">
+                    <div class="row gx-5 align-items-center justify-content-center">
+                        <div class="col-lg-8 col-xl-7 col-xxl-6">
+                            <div class="my-5 text-center text-xl-start">
+                                <h1 class="display-5 fw-bolder text-white mb-2">Bienvenido a
+                                    <br>Coder-Pharma
+                                </h1>
+                                <p class="lead fw-normal text-white-50 mb-4">Esta es una Drogueria ficticia sin fines de lucro creada para la presentacion del proyecto final del Curso PYTHON de la plataforma Coderhouse.</p>
+                                <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
+                                    <a class="btn btn-primary btn-lg px-4 me-sm-3" href="#features">Funcionalidades</a>
+                                    <a class="btn btn-outline-light btn-lg px-4" href="{% url '05_Directorio' %}">Sobre Nosotros</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center"><img class="img-fluid rounded-3 my-5" src="https://imagenes.20minutos.es/files/og_thumbnail/uploads/imagenes/2021/11/07/medicamentos.jpeg" alt="..." /></div>
+                    </div>
+                </div>
+            </header>
+            <!-- Info DROGUERIA -->
+            <section class="py-5" id="features">
+                <div class="container px-5 my-5">
+                    <div class="row gx-5">
+                        <div class="col-lg-4 mb-5 mb-lg-0">
+                            <h2 class="fw-bolder mb-0">Áreas de Atencion</h2>
+                            <p>La atención al cliente es una de nuestras metas. Nuestro amplio stock y diversidad le permite contar siempre con una solución para su empresa.</p>  
+                        </div>
+                        <div class="col-lg-8">
+                            <div class="row gx-5 row-cols-1 row-cols-md-2">
+                                <div class="col mb-5 h-100">
+                                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-collection"></i></div>
+                                    <a class="h5" style="color: black; text-decoration: none" href="{% url '08_Clientes' %} ">Clinicas y Sanatorios</a>
+                                    <p class="mb-0">
+                                        Disponemos de los medicamentos y soluciones parenterales que su sanatorio necesita.
+                                        <br>
+                                        <br>
+                                        Nuestro stock y logística permiten dar una respuesta en el momento.
+                                        <br>
+                                        <br>
+                                        Más de 230 instituciones confían en nuestros servicios.
+                                        <br>
+                                        Consulte nuestros productos y pruébelo usted mismo.
+                                    </p>
+                                </div>
+
+                                <div class="col mb-5 mb-md-0 h-100">
+                                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-collection"></i></div>
+                                    <a class="h5" style="color: black; text-decoration: none" href="{% url '08_Clientes' %} ">Farmacias</a>
+                                    <p class="mb-0">
+                                        Contamos con más de 3.000 presentaciones de productos y accesorios con la mejor relación precio/servicio del mercado.
+                                        <br>
+                                        <br>
+                                        Nuestro plantel de profesionales de amplia experiencia y capacitación permanente están a su disposición para asesorarlo en todo momento.
+                                    </p>
+                                </div>
+
+                                <div class="col mb-5 h-100">
+                                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-building"></i></div>
+                                    <a class="h5" style="color: black; text-decoration: none" href="{% url '08_Clientes' %} ">Sector Público</a>
+                                    <p class="mb-0">
+                                        Ponemos a disposición de Ministerios Nacionales, Provinciales y Municipales a un grupo de profesionales atentos a satisfacer las exigencias de calidad y celeridad en licitaciones, respaldados por un amplio stock y diversidad de productos, medicamentos, y soluciones parenterales.
+                                        Contamos con el mejor precio de mercado.
+                                    </p>
+                                </div>
+
+                                <div class="col h-100">
+                                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-toggles2"></i></div>
+                                    <a class="h5" style="color: black; text-decoration: none" href="{% url '02_Productos' %} ">Droguerías</a>
+                                    <p class="mb-0">
+                                        Brindarmos un acertado asesoramiento y una provisión integral de medicamentos con profesionales de vasta experiencia, un amplio y variado vademécum y stock permanente.
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <hr><hr>
+            <!-- Testimonial section-->
+                <div class="container px-5 my-5">
+                    <div class="row gx-5 justify-content-center">
+                        <div class="col-lg-10 col-xl-7">
+                            <div class="text-center">
+                                <div class="fs-4 mb-4 fst-italic">"“Las grandes organizaciones requieren un alto nivel de compromiso por parte de las personas involucradas”."</div>
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <img class="rounded-circle me-3" src="https://www.abc.es/xlsemanal/wp-content/uploads/sites/5/2022/05/bill-gates-antivacunas-jefrey-epstein-50.jpg" height="100" alt="..." />
+                                    <div class="fw-bold">
+                                       Bill Gates
+                                        <span class="fw-bold text-primary mx-1">/</span>
+                                        Creador y Fundador de MICROSOFT
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!-- Pie de Página -->
+        <footer class="bg-dark py-4 mt-auto">
+            <div class="container px-5">
+                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                    <div class="col-auto"><div class="small m-0 text-white">Copyright &copy; Coder Pharma 2022</div></div>
+                    <div class="col-auto">
+                        <a class="link-light small" href="{% url '01_Inicio' %}">Inicio</a>
+                        <span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="{% url '05_Directorio' %}">Nosotros</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>

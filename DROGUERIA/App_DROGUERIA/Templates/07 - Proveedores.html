@@ -1,0 +1,67 @@
+{% extends '00 - ORIGEN (b).html' %}   
+{% load static %}
+
+
+{% block blockname %}   
+    <body>
+        <br>
+        <p class="text-center"><img class="img-fluid rounded mb-5 mb-lg-0" src="http://127.0.0.1:8000/media/imagenes/Membrete_Coder-Pharma.png" alt="..." /></p>
+        <hr>
+        <h1 class="text-center"> PROVEEDORES </h1>
+        <br>
+        <br>
+        <br>
+        <br>
+        <p> Detalle de Proveedores </p>
+
+        <center>
+            <h4 class="text-center"> Buscar Proveedor </h4>
+            <form action="{% url '07_BuscarProveedor' %}" method="GET"> {% csrf_token %}
+            <p><input type="text" name="nombre">
+            <input type="submit" value="BUSCAR">
+            </p>
+
+            <table class="table table-striped">
+                <tr>
+                    <th>Numero</th>
+                    <th>Nombre y Apellido </th>
+                    <th>Razón Social</th>
+                    <th>Dirección</th>
+                    <th>Código Postal</th>
+                    <th>Teléfono</th>
+                    <th>E-Mail</th>
+                    <th>Forma de Pago</th>
+                    <th>Codigo Proveedor</th>
+                    <th>Tipo Proveedor</th>    
+                    <th>Accion</th>                
+                </tr>
+                {% for proveedor in Proveedores %}
+                <tr>
+                    <th scope="row">{{forloop.counter}}</th>
+                    <td>{{proveedor.nombre}} {{proveedor.apellido}}</td>
+                    <td>{{proveedor.razonSocial}}</td>
+                    <td>{{proveedor.direccion}}</td>
+                    <td>{{proveedor.codigoPostal}}</td>
+                    <td>{{proveedor.telefono}}</td>
+                    <td>{{proveedor.eMail}}</td>
+                    <td>{{proveedor.form_pago}}</td>
+                    <td>{{proveedor.codigo_Proveedor}}</td>
+                    <td>{{proveedor.tipo_Proveedor}}</td>
+                    <td>
+                        <a style="color: black; text-decoration: none" href="{% url '07_EditaProveedor' proveedor.id %}">Editar</a> | 
+                        <a style="color: black; text-decoration: none" href="{% url '07_EliminaProveedor' proveedor.id %}">Eliminar</a> 
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </center>
+
+        <p> Para agregar un nuevo PROVEEDOR, click  <a style="text-decoration: none;"  href="{% url '07_AgregaProveedor' %}" class="btn btn-outline-primary"> AQUI </a> </p>
+        <hr>
+        
+        <h1 class="text-center"><a href="{% url '04_AcercadeCoderPharma' %}" class="btn btn-outline-primary" disabled> VOLVER</a></h1>
+        
+        <hr>
+    </body>
+</html>
+{% endblock blockname %}

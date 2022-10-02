@@ -1,0 +1,64 @@
+{% extends '00 - ORIGEN (b).html' %}   
+{% load static %}
+
+
+{% block blockname %}
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agrega Proveedor</title>
+</head>
+<body>
+    <br>
+    <p class="text-center"><img class="img-fluid rounded mb-5 mb-lg-0" src="http://127.0.0.1:8000/media/imagenes/Membrete_Coder-Pharma.png" alt="..." /></p>
+    <hr>
+    <h1> AGREGAR PROVEEDOR </h1>
+    <br>
+    <br>
+
+
+    <form action="" method="POST"> 
+        {% csrf_token %}
+
+        {{form.as_p}}
+
+        <!--
+       <p> Nombre: <input type="text" name="nombre"></p>
+       <p> Apellido: <input type="text" name="apellido"></p>
+       <p> Razon Social: <input type="text" name="razonSocial"></p>
+       <p> Direccion: <input type="text" name="direccion"></p>
+       <p> Codigo Postal: <input type="number" name="codigoPostal"></p>
+       <p> Teléfono: <input type="number" name="telefono"></p>
+       <p> E-mail: <input type="text" name="eMail"></p>
+       <p> Forma de Pago: <input type="text" name="form_pago"></p>
+       <p> Codigo Proveedor : <input type="number" name="codigo_Proveedor"></p>
+       <p> Tipo Proveedor: <input type="text" name="tipo_Proveedor"></p>
+
+       -->
+<!--
+    <form action="{% url '07_AgregaProveedor' %}" method="POST"> {% csrf_token %}
+       <p> Nombre: <input type="text" name="nombre" placeholder="Nombre completo"></p>
+       <p> Apellido: <input type="text" name="apellido" placeholder="Apellido"></p>
+       <p> Razon Social: <input type="text" name="razonSocial" placeholder="Razon Social"></p>
+       <p> Direccion: <input type="text" name="direccion" placeholder="Dirección"></p>
+       <p> Codigo Postal: <input type="text" name="codigoPostal" placeholder="Código Postal"></p>
+       <p> Teléfono: <input type="number" name="telefono" placeholder="Teléfono"></p>
+       <p> E-mail: <input type="text" name="eMail" placeholder="E-mail"></p>
+       <p> Forma de Pago: <input type="text" name="form_pago" placeholder="Forma de Pago"></p>
+       <p> Codigo Proveedor : <input type="number" name="codigo_Proveedor" placeholder="Código Proveedor"></p>
+       <p> Tipo Cliente: <input type="text" name="tipo_Cliente" placeholder="Tipo Cliente"></p>
+-->
+       <input type="submit" value="Agregar">
+    </form>
+
+
+    
+        <a href="{% url '07_Proveedores' %}" class="btn btn-outline-primary" disabled> VOLVER - </a>
+    
+
+
+</body>
+</html>
+{% endblock blockname %}

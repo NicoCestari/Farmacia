@@ -1,0 +1,71 @@
+{% extends '00 - ORIGEN (b).html' %}   
+{% load static %}
+
+
+{% block blockname %}
+    <body>
+        <br>
+        <p class="text-center"><img class="img-fluid rounded mb-5 mb-lg-0" src="http://127.0.0.1:8000/media/imagenes/Membrete_Coder-Pharma.png" alt="..." /></p>
+        <hr>
+        <br>
+        <h1 class="text-center"> PRINCIPALES CLIENTES </h1>
+        <br>
+        <br>
+        <br>
+        <br>
+        <p> Detalle de Clientes </p>
+
+        <center>
+            <h4 class="text-center"> Buscar Cliente </h4>
+            <form action="{% url '08_BuscarCliente' %}" method="GET"> {% csrf_token %}
+            <p><input type="text" name="nombre">
+            <input type="submit" value="BUSCAR">
+            </p>
+
+            <table class="table table-striped">
+                <tr>
+                    <th>Numero</th>
+                    <th>Nombre y Apellido </th>
+                    <th>Razón Social</th>
+                    <th>Dirección</th>
+                    <th>Código Postal</th>
+                    <th>Teléfono</th>
+                    <th>E-Mail</th>
+                    <th>Forma de Pago</th>
+                    <th>Codigo Cliente</th>
+                    <th>Tipo Cliente</th>
+                    <th>Accion</th>
+                </tr>
+                    {% for cliente in Clientes %}
+                <tr>
+                    <th scope="row">{{forloop.counter}}</th>
+                    <td>{{cliente.nombre}} {{cliente.apellido}}</td>
+                    <td>{{cliente.razonSocial}}</td>
+                    <td>{{cliente.direccion}}</td>
+                    <td>{{cliente.codigoPostal}}</td>
+                    <td>{{cliente.telefono}}</td>
+                    <td>{{cliente.eMail}}</td>
+                    <td>{{cliente.form_pago}}</td>
+                    <td>{{cliente.codigo_Cliente}}</td>
+                    <td>{{cliente.tipo_Cliente}}</td>
+                    <td>
+                    
+                        <a style="color: black; text-decoration: none" href="{% url '08_EditaCliente' cliente.id %}">Editar</a> |
+                        <a style="color: black; text-decoration: none" href="{% url '08_EliminaCliente' cliente.id %}">Eliminar</a> 
+                          
+                    </td>
+                    
+                </tr>
+                    {% endfor %}
+            </table>
+        </center>
+
+        <p> Para agregar un nuevo CLIENTE, click  <a style="text-decoration: none;" href="{% url '08_AgregaCliente' %}" class="btn btn-outline-primary">AQUI</a> </p>
+        <hr>
+       
+        <h1 class="text-center"><a href="{% url '04_AcercadeCoderPharma' %}" class="btn btn-outline-primary" disabled> VOLVER</a></h1>
+        
+        <hr><hr>
+    </body>
+</html>
+{% endblock blockname %}

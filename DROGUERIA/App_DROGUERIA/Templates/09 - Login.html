@@ -1,0 +1,25 @@
+{% extends '00 - ORIGEN (b).html' %}
+{% load static %}
+
+{% block blockname %}
+<Body>
+    <br>
+    <p class="text-center"><img class="img-fluid rounded mb-5 mb-lg-0" src="http://127.0.0.1:8000/media/imagenes/Membrete_Coder-Pharma.png" alt="..." /></p>
+    <hr>
+
+
+    <form action="{% url '09_Login' %}" method="POST">{% csrf_token %}
+
+        {{formulario.as_p}}
+
+        <input type="submit" value="LOGIN">
+        <br>
+        <h1 class="text-center"><a href="{% url '10_Registro' %}" class="btn btn-outline-primary" >REGISTRATE</a></h1>
+        <hr>
+        <h1 class="text-center"><a href="{% url '01_Inicio' %}" class="btn btn-outline-primary" disabled> VOLVER</a></h1>
+        <hr><hr>
+      
+        
+    </form>
+</Body>
+{% endblock blockname %}
